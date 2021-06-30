@@ -8,12 +8,13 @@ function App() {
   const [counter, setCounter] = useState(0);
   const reverseClass = reverse ? 'reverse' : '';
 
+  // usando callback no set
   const handleClick = () => {
-    setReverse(!reverse);
+    setReverse((reverse) => !reverse);
   };
 
   const handleIncrement = () => {
-    setCounter(counter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
   };
 
   return (
